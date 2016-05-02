@@ -1,6 +1,5 @@
 class AuthorsController < ApplicationController
     def index
-        
     end
     
     def show
@@ -13,13 +12,17 @@ class AuthorsController < ApplicationController
     
     def create
      @author = Author.new(author_params)
-     @author.save
-     flash[:success] = "Author has been created"
-     redirect_to @author
+     if @author.save
+      flash[:success] = "Author has been created"
+      redirect_to @author
+      else
+       flash[:danger] = "Author has not been created"
+       render :new
+     end
     end
     
     private
-    def author_params
-     params.require(:author).permit(:first_name, :last_name)
-    end
+  def author_params
+   params.require(:author).permit(:first_name, :last_name)
+  end
 end
