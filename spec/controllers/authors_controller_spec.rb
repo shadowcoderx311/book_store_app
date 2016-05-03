@@ -91,11 +91,24 @@ RSpec.describe AuthorsController, :type => :controller do
              put :update, author: Fabricate.attributes_for(:author, first_name: "Mike"), id: john.id
              
              expect(response).to redirect_to(author_path(Author.last))
-           end
-         end
+            end
+          end
          
          context "unsuccessful update" do
+           let(:john) { Fabricate(:author, first_name: "John") }
            
+           it "does not update the author object with invalid inputs" do
+             put :update, author: Fabricate.attributes_for(:author, first_name: nil), id: john.id
+             
+             expect(Author.last.first_name).to eq("John")
+           end
+           
+           it "sets the success flash message" do
+             put :update, author: Fabricate.attributes_for(:author, first_name: nil), id: john.id
+             
+             
+             expect(flash[:danger]).to eq("Author has not been updated")
+           end
          end
        end
     end
