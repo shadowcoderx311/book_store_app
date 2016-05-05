@@ -13,5 +13,5 @@ RSpec.feature "Creating Authors" do
         click_button "Create Author"
         
         expect(page).to have_content("Author has been created")
-    end
-end
+     end
+  end
