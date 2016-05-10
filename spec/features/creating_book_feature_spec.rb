@@ -9,7 +9,7 @@ RSpec.feature "creating Books" do
     visit root_path
     
     click_link "Books", exact: true
-    click_link "Add New book"
+    click_link "Add New Book"
     
     fill_in "Title", with: "Javascript"
     fill_in "Isbn", with: "9780321772978"
@@ -18,6 +18,7 @@ RSpec.feature "creating Books" do
     fill_in "Description", with: "Learn Javascript the quick and easy way"
     fill_in "Published at", with: "2012-01-01"
     select "Peachpit Press", from: "Publisher"
+    attach_file "Book cover", "app/assets/images/itext.jpg"
     check author1.full_name
     check author2.full_name
     
