@@ -26,8 +26,9 @@ gem 'bootstrap_form'
 gem 'jquery-ui-rails', '5.0.5'
 
 gem 'carrierwave-dropbox'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.5'
 gem 'figaro'
+gem 'imagemagick-binaries', '~> 6.8'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
