@@ -22,7 +22,7 @@ Publisher.create!([
   {name: 'No Starch Press'}
   ])
     
-Book.create(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
+Book.create!(title: 'Gnuplot in Action', isbn: '978-1-933-98839-9',
              page_count: 360, price: 66.37, description: 'A book on the awesome
              opensource plotting sofware', published_at: '2010-11-04',
              publisher_id: 4,
