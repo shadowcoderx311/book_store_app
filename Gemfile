@@ -26,9 +26,10 @@ gem 'bootstrap_form'
 gem 'jquery-ui-rails', '5.0.5'
 
 gem 'carrierwave-dropbox'
-gem 'mini_magick', '~> 4.5'
+gem 'mini_magick', '~> 4.5.1'
 gem 'figaro'
 gem 'imagemagick-binaries', '~> 6.8'
+
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -61,6 +62,7 @@ group :test do
   gem 'capybara', '2.4.4'
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'populator'
 end
 
 group :test do
