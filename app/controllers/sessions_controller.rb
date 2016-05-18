@@ -4,9 +4,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-   user = User.authenticate(email: params[:email])
    if user = User.authenticate(params[:email], params[:password])
-     user && user.authenticate(params[:password])
      session[:user_id] = user.id
      flash[:success] = "Sign in successful"
      redirect_to root_path
@@ -14,5 +12,11 @@ class SessionsController < ApplicationController
      flash.now[:danger] = "Invalid email/password combination"
      render :new
    end
+  end
+  
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = "You have been signed out"
+    redirect_to root_path
   end
 end
