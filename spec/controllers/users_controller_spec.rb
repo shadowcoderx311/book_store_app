@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
     describe "GET #index" do
-      it "returns a successful http request stutus code" do
+      it "returns a successful http request status code" do
         get :index
     
         expect(response).to have_http_status(:success)

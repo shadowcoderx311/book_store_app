@@ -18,10 +18,16 @@ RSpec.describe AuthorsController, :type => :controller do
       end
       
       context "non-admin users" do
+        before { set_current_user }
+        
+        it "redirects to the root path" do
+          get :index
+          expect(response).to redirect_to root_path
+        end
       end
       
       context "admin users" do
-        it "returns a successful http request stutus code" do
+        it "returns a successful http request status code" do
         get :index
     
         expect(response).to have_http_status(:success)
