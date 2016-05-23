@@ -28,7 +28,6 @@ gem 'jquery-ui-rails', '5.0.5'
 gem 'carrierwave-dropbox'
 gem 'mini_magick', '~> 4.5.1'
 gem 'figaro'
-gem 'imagemagick-binaries', '~> 6.8'
 
 
 # Use ActiveModel has_secure_password
