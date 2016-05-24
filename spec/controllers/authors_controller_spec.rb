@@ -1,5 +1,6 @@
 require 'rails_helper'
 require 'support/macros'
+require 'support/shared_examples'
 
 RSpec.describe AuthorsController, :type => :controller do
   let(:admin) {Fabricate(:admin) }
@@ -33,15 +34,15 @@ RSpec.describe AuthorsController, :type => :controller do
         let(:author) { Fabricate(:author) }
         
         context "guest users" do
-          it_behaves_like "requires sign in" do
+          it_behaves_like "requires admin" do
            let(:action) { get :index }
           end
         end
         
         context "non-admin users" do
-           it_behaves_like "requires admin" do
-             let(:action) { get :index }
-           end
+          before do
+            clear_current_user
+            set_current_user
           end
         
         it "redirects to the root path" do
