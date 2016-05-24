@@ -36,11 +36,11 @@ RSpec.describe AuthorsController, :type => :controller do
       end
 
     describe "GET #show" do
-        author = Fabricate(:author)
+        let(:author) { Fabricate(:author) }
         
-        context "guest user" do
-          before { clear_current_user }
-          
+        context "guest users" do
+           before { clear_current_user }
+           
           it "redirects to the signin page for un-authenticated users" do
             get :show, id: user.id
             expect(response).to redirect_to signin_path
