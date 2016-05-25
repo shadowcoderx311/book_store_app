@@ -1,15 +1,34 @@
 require 'rails_helper'
+require 'support/macros'
+require 'support/shared_examples'
 
 RSpec.describe UsersController, :type => :controller do
-    describe "GET #index" do
-      it "returns a successful http request status code" do
-        get :index
-    
+    describe "GET #show" do
+      #
+      let(:user) { Fabricate(:user) }
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      #
+      
+      context "admin users" do
+        it "returns a successful http request status code" do
+          get :show, id: user.id
         expect(response).to have_http_status(:success)
         end
       end
-
-    describe "GET #show" do
+    end
+    
       it "returns a successful http request status code" do
         user = Fabricate(:user)
         
