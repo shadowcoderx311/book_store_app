@@ -21,6 +21,16 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Raise exceptions instead of rendering exception templates.
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:                'smtp.gmail.com',
+    port:                   587,
+    domain:                 'example.com',
+    user_name:              ENV[''],
+    password:               ENV[''],
+    authentication:         'plain',
+    enable_starttls_auto: true }
+  
   config.action_dispatch.show_exceptions = false
 
   # Disable request forgery protection in test environment.
