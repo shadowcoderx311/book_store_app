@@ -33,7 +33,7 @@ gem 'figaro'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate-bootstrap', '1.0.1'
-gem 'stripe', '~> 1.43.0', source: 'https://code.stripe.com'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -63,6 +63,7 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'populator'
+  gem 'selenium-webdriver', '~> 2.45'
 end
 
 group :test do

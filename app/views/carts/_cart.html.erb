@@ -17,6 +17,13 @@
           <%= button_to "Clear cart", cart_path(cart), method: :delete,
             data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
         </div>
+        
+        <div id="checkout-btn" class="col-md-5">
+          <%= button_to "checkout", new_order_path, method: :get,
+              class: "btn btn-default", id: "checkout" %>
+        </div>
+      </div>
+        
     </div>
   </div>
 </section>
