@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe BooksController, :type => :controller do
     describe "GET #index" do
-      it "returns a successful http request stutus code" do
+      it "returns a successful http request status code" do
         get :index
         expect(response).to have_http_status(:success)
      end
@@ -116,18 +116,4 @@ RSpec.describe BooksController, :type => :controller do
         expect(response).to redirect_to books_path
       end
      end
-    end
-    
-    Fabricator(:book) do
-      title { Faker::Lorem.sentence }
-      price { Faker::Commerce.price }
-      isbn { Faker::Code.isbn }
-      page_count { Faker::Number.number(4) }
-      description { Faker::Lorem.paragraph }
-      published_at 1.year.ago
-      publisher
-    end
-    
-    Fabricator(:publisher) do
-      name { Faker::Company.name }
     end

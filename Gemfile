@@ -56,7 +56,6 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard-rspec', require: false
   gem 'fabrication', '2.11.3'
-  gem 'spec', '~> 5.3'
 end
 
 group :test do
@@ -64,10 +63,11 @@ group :test do
   gem 'faker'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'populator'
-  gem 'selenium-webdriver', '~> 2.53', '>= 2.53.1'
-  gem 'capybara-webkit', '~> 1.11', '>= 1.11.1'
+ #gem 'selenium-webdriver', '~> 2.53', '>= 2.53.1'
+ #gem 'capybara-webkit', '~> 1.11', '>= 1.11.1'
   gem 'database_cleaner', "~> 1.5.3"
   gem 'headless', '~> 2.2'
+  gem 'poltergeist'
 end
 
 group :test do
